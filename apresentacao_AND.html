@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>OA Operadores Lógicos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/can.jquery.js"></script>
+	<script src="js/apresentacao_AND/data.js"></script>
+	<script src="js/utils.js"></script>
+
+	<script>
+		function load() {
+			loadImageOptions(2, 'P');
+			loadImageOptions(2, 'Q');			
+			document.getElementById("imgElementoResultado").src = "images/interrogacao.png";
+		}		
+
+		function verifyResult() {
+			if (elementoP != undefined && elementoQ != undefined) {
+				var imagemResultado = "";
+				var textoResultado = "";
+				var habilitarProximo = false;
+				if (AND(elementoP, elementoQ)) {
+					imagemResultado = "resultado_TRUE.png";
+					habilitarProximo = true;
+				} else if (elementoP) {
+					imagemResultado = "resultado_FALSE_3.png";
+					habilitarProximo = false;
+				} else {
+					imagemResultado = elementoQ ? "resultado_FALSE_2.png" : "resultado_FALSE_1.png";
+					habilitarProximo = false;
+				}							
+				document.getElementById("imgElementoResultado").src = diretorioImagens + imagemResultado;
+
+				textoResultado = imagens[imagens.indexOf(imagemResultado)][1];							
+				document.getElementById("spanTextoResultado").innerHTML = findResultText(textos, imagemResultado);
+
+				if (habilitarProximo) {
+					$("#buttonProximo").attr("class", "btn btn-primary");
+				} else {
+					$("#buttonProximo").attr("class", "btn btn-primary disabled");					
+				}
+			} else {				
+				document.getElementById("imgElementoResultado").src = "images/interrogacao.png";
+				document.getElementById("spanTextoResultado").innerHTML = "...";
+				$("#buttonProximo").attr("class", "btn btn-primary disabled");
+			}			
+		}
+	</script>
+</head>
+
+<body style="background-color: #fffffa;" onload="load()">
+	<div class="container">
+	
+	<div class="col-sm-12">&nbsp</div>
+
+	<div id="divBotoes" class="row">
+		<span class="col-sm-offset-5 col-sm-2">
+			<ul class="nav nav-pills nav-justified">
+			  <li><a id="buttonVolta" href="index.html" role="button" class="btn btn-primary"><< Voltar</a></li>
+			  <li><a id="buttonProximo" href="apresentacao_OR.html" role="button" class="btn btn-primary disabled">Próximo >></a></li>			  
+			</ul>
+		</span>
+	</div>					
+
+	<div class="col-sm-12">&nbsp</div>
+
+	<div id="divContent" class="row">
+
+	  	<div class="col-sm-12">&nbsp</div>
+
+		<div id="elementos" class="col-sm-12">
+			<div id="divDescricao" class="col-sm-12 well well-lg lead">
+				<p>João é um estudante esforçado que quer muito entrar na faculdade. Por isso, ele se inscreveu para participar do ENEM. João se preparou bastante para a prova, pois buscará alcançar uma boa pontuação no exame. Contudo, no dia da tão esperada prova, faltando 15 minutos para o seu início e consequente fechamento dos portões de acesso aos locais de aplicação, João ainda estava em casa, que fica a 10 Km do seu local de prova.</p>
+				<p>Com base nessa contextualização da situação de João, selecione e arraste até os respectivos espaços vazios as opções que João escolheria para conseguir chegar a tempo ao seu local de prova. Caso as opções selecionadas não correspondam com uma a escolha adequada, arraste a opção escolhida para o seu respectivo local e tente novamente.</p>
+			</div>
+
+		    <div id="divP" class="col-sm-3">		    	
+		    	<span class="col-sm-12">&nbsp</span>
+				<div id="divElementoP" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
+				</div>
+				<div id="divOpcao1ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+					<img id="imgOpcao1ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>
+				<div id="divOpcao2ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+					<img id="imgOpcao2ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>				
+			</div>
+
+			<div id="divOperador" class="col-sm-1">
+				<span class="col-sm-12">&nbsp</span>
+				<span class="col-sm-12">&nbsp</span>
+				<span class="col-sm-12">&nbsp</span>
+				<span><strong>E (AND)</strong></span>				
+			</div>
+
+			<div id="divQ" class="col-sm-3">		    	
+		    	<span class="col-sm-12">&nbsp</span>
+				<div id="divElementoQ" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
+				</div>
+				<div id="divOpcao1ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+					<img id="imgOpcao1ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>
+				<div id="divOpcao2ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+					<img id="imgOpcao2ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>				
+			</div>
+
+			<div class="col-sm-5">
+		    	<span class="col-sm-12">&nbsp</span>
+		    	<div id="divDescricao" class="col-sm-offset-2 col-sm-10 well well-lg">
+					<span id="spanTextoResultado" class="lead">...</span>
+				</div>
+				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg">			
+					<img id="imgElementoResultado" src="" class="img-thumbnail">
+				</div>				
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

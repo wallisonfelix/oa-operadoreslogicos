@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>OA Operadores Lógicos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/can.jquery.js"></script>
+	<script src="js/operadores_logicos/data.js"></script>
+	<script src="js/utils.js"></script>
+
+	<script>
+		function load() {
+			loadImageOptions(2, 'P');
+			loadImageOptions(2, 'Q');			
+			document.getElementById("imgElementoResultado").src = "images/interrogacao.png";
+		}		
+
+		function verifyResult() {
+			if (elementoP != undefined && elementoQ != undefined 
+				&& notElementoQ != undefined && notElementoQ != undefined
+				&& operador != undefined) {
+				var imagemResultado = "";
+				switch(operador) {
+					case "AND":
+						imagemResultado = AND(XOR(elementoP, notElementoP), XOR(elementoQ, notElementoQ))  ? "resultado_TRUE.png" : "resultado_FALSE.png";
+						break;
+					case "OR":
+						imagemResultado = OR(XOR(elementoP, notElementoP), XOR(elementoQ, notElementoQ)) ? "resultado_TRUE.png" : "resultado_FALSE.png";
+						break;
+					case "XOR":
+						imagemResultado = XOR(XOR(elementoP, notElementoP), XOR(elementoQ, notElementoQ)) ? "resultado_TRUE.png" : "resultado_FALSE.png";
+						break;
+					default:
+						imagemResultado = "../interrogacao.png";
+						break;	
+				}				
+				document.getElementById("imgElementoResultado").src = diretorioImagens + imagemResultado;
+			} else {				
+				document.getElementById("imgElementoResultado").src = "images/interrogacao.png";
+			}
+			document.getElementById("spanLabelOperadorResultado").innerHTML = operador;
+			document.getElementById("imgLabelPResultado").src = diretorioImagens + (notElementoP ? "barra_P.png" : "P.png");
+			document.getElementById("imgLabelQResultado").src = diretorioImagens + (notElementoQ ? "barra_Q.png" : "Q.png");
+		}
+	</script>
+</head>
+
+<body style="background-color: #fffffa;" onload="load()">
+	<div class="container">
+	  <div id="divHeader" class="row">
+		<div class="col-sm-12">
+		  <div class="page-header text-center">		    
+		    <img id="imgTituloOA" src="images/titulo_OA.png" class="img-responsive center-block">
+		  </div>
+		</div>
+	  </div>
+
+	  <div id="divContent" class="row">	    
+	 
+		<div id="menu" class="col-sm-12" style="margin-bottom: 10px">
+		  <ul class="nav nav-pills nav-justified">
+		  	<li class="active"><a href="#">SIMULAÇÃO COM 2 ELEMENTOS</a></li>
+		  	<li><a href="simulacao_3_elementos.html">SIMULAÇÃO COM 3 ELEMENTOS</a></li>
+		    <li><a href="leitura_complementar.html">LEITURA COMPLEMENTAR</a></li>
+		    <li><a href="creditos.html">CRÉDITOS</a></li>
+		  </ul>		
+		</div>
+
+		<div id="elementos" class="col-sm-12">
+		    <div id="divP" class="col-sm-4">
+		    	<div id="divNOTElementoP" class="col-sm-offset-5 col-sm-7">
+		    		<strong>NOT</strong> <input id="checkboxNOTElementoP" type="checkbox" onchange="setNotElement(this, 'P')"> <img id="imgLabelP" src="images/operadores_logicos/P.png" class="img-responsive">
+		    	</div>
+		    	<span class="col-sm-12">&nbsp</span>
+				<div id="divElementoP" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
+				</div>
+				<div id="divOpcao1ElementoP" class="col-sm-5 well well-lg" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+					<img id="imgOpcao1ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>
+				<div id="divOpcao2ElementoP" class="col-sm-offset-2 col-sm-5 well well-lg" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+					<img id="imgOpcao2ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>				
+			</div>
+
+			<div id="divOperador" class="col-sm-1">
+				<span class="col-sm-12">&nbsp</span>
+				<span class="col-sm-12">&nbsp</span>
+				<span class="col-sm-12">&nbsp</span>
+				<span><strong>Operador</strong></span>
+				<div class="form-group">
+					<select id="selectOperador" class="form-control" style="padding: 0px;" onchange="setOperator(this.options[this.selectedIndex].text);">					
+						<option value="AND">AND</option>
+						<option value="OR">OR</option>
+						<option value="XOR">XOR</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="divQ" class="col-sm-4">
+			    <div id="divNOTElementoQ" class="col-sm-offset-5 col-sm-7">
+		    		<strong>NOT</strong> <input id="checkboxNOTElementoQ" type="checkbox" onchange="setNotElement(this, 'Q')"> <img id="imgLabelQ" src="images/operadores_logicos/Q.png" class="img-responsive">
+		    	</div>
+		    	<span class="col-sm-12">&nbsp</span>
+				<div id="divElementoQ" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
+				</div>
+				<div id="divOpcao1ElementoQ" class="col-sm-5 well well-lg" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+					<img id="imgOpcao1ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>
+				<div id="divOpcao2ElementoQ" class="col-sm-offset-2 col-sm-5 well well-lg" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+					<img id="imgOpcao2ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
+				</div>				
+			</div>
+
+			<div class="col-sm-3">
+				<span class="col-sm-12">&nbsp</span>
+			    <div class="col-sm-offset-2 col-sm-10">
+			    	<span class="col-sm-4">
+		    			<img id="imgLabelPResultado" src="images/operadores_logicos/P.png" > 
+		    		</span>
+		    		<span id="spanLabelOperadorResultado" class="col-sm-4 lead text-center" style="padding: 0px;">
+		    			AND
+		    		</span>
+		    		<span class="col-sm-4">
+		    			<img id="imgLabelQResultado" src="images/operadores_logicos/Q.png" > 
+		    		</span>
+		    	</div>
+		    	<span class="col-sm-12">&nbsp</span>
+				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg">			
+					<img id="imgElementoResultado" src="" class="img-thumbnail">
+				</div>						
+			</div>
+		</div>			
+
+	</div>
+
+</body>
+
+</html>
