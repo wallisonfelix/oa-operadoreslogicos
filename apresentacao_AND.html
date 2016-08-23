@@ -53,7 +53,7 @@
 	</script>
 </head>
 
-<body style="background-color: #fffffa;" onload="load()">
+<body onload="load()">
 	<div class="container">
 	
 	<div class="col-sm-12">&nbsp</div>
@@ -74,19 +74,19 @@
 	  	<div class="col-sm-12">&nbsp</div>
 
 		<div id="elementos" class="col-sm-12">
-			<div id="divDescricao" class="col-sm-12 well well-lg lead">
+			<div id="divDescricao" class="col-sm-12 well well-lg lead box">
 				<p>João é um estudante esforçado que quer muito entrar na faculdade. Por isso, ele se inscreveu para participar do ENEM. João se preparou bastante para a prova, pois buscará alcançar uma boa pontuação no exame. Contudo, no dia da tão esperada prova, faltando 15 minutos para o seu início e consequente fechamento dos portões de acesso aos locais de aplicação, João ainda estava em casa, que fica a 10 Km do seu local de prova.</p>
-				<p>Com base nessa contextualização da situação de João, selecione e arraste até os respectivos espaços vazios as opções que João escolheria para conseguir chegar a tempo ao seu local de prova. Caso as opções selecionadas não correspondam com uma a escolha adequada, arraste a opção escolhida para o seu respectivo local e tente novamente.</p>
+				<p>Com base nessa contextualização da situação de João, selecione e arraste até os respectivos espaços vazios as opções que João escolheria para conseguir chegar a tempo ao seu local de prova. Caso as opções selecionadas não correspondam com uma a escolha adequada, arraste as opções escolhidas de volta para os seus respectivos locais e tente novamente.</p>
 			</div>
 
 		    <div id="divP" class="col-sm-3">		    	
 		    	<span class="col-sm-12">&nbsp</span>
-				<div id="divElementoP" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divElementoP" class="col-sm-12 well well-lg box" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
 				</div>
-				<div id="divOpcao1ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divOpcao1ElementoP" class="col-sm-6 well well-lg box" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
 					<img id="imgOpcao1ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>
-				<div id="divOpcao2ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divOpcao2ElementoP" class="col-sm-6 well well-lg box" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
 					<img id="imgOpcao2ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>				
 			</div>
@@ -100,22 +100,22 @@
 
 			<div id="divQ" class="col-sm-3">		    	
 		    	<span class="col-sm-12">&nbsp</span>
-				<div id="divElementoQ" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divElementoQ" class="col-sm-12 well well-lg box" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
 				</div>
-				<div id="divOpcao1ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divOpcao1ElementoQ" class="col-sm-6 well well-lg box" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
 					<img id="imgOpcao1ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>
-				<div id="divOpcao2ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divOpcao2ElementoQ" class="col-sm-6 well well-lg box" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
 					<img id="imgOpcao2ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>				
 			</div>
 
 			<div class="col-sm-5">
 		    	<span class="col-sm-12">&nbsp</span>
-		    	<div id="divDescricao" class="col-sm-offset-2 col-sm-10 well well-lg">
+		    	<div id="divDescricao" class="col-sm-offset-2 col-sm-10 well well-lg box">
 					<span id="spanTextoResultado" class="lead">...</span>
 				</div>
-				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg">			
+				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg box">			
 					<img id="imgElementoResultado" src="" class="img-thumbnail">
 				</div>				
 			</div>

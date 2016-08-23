@@ -12,8 +12,8 @@ var imagens = [
 ]
 
 var textos = [
-["resultado_FALSE_1.png", "Mesmo se saisse de casa cedo, caminhar/correr 10 Km nunca é uma boa ideia para quem vai fazer uma prova tão importante."],
-["resultado_TRUE_1.png", "Bom, essa parece ser a melhor escolha! Já que João não teria que correr os riscos de se guiar uma moto. Assim ele chegaria mais tranquilo."],
-["resultado_TRUE_2.png", "É... essa seria uma boa opção para João, já que funcionou no dia anterior, mesmo ele estando atrasado."],
+["resultado_FALSE_1.png", "Mesmo que saisse de casa cedo, caminhar ou correr 10 Km nunca é uma boa ideia para quem vai fazer uma prova tão importante."],
+["resultado_TRUE_1.png", "Bom, essa parece ser a melhor escolha! Já que João não teria que correr os riscos de guiar uma moto. Assim ele chegaria mais tranquilo."],
+["resultado_TRUE_2.png", "É... essa seria uma boa opção para João, já que funcionou no dia anterior mesmo ele estando atrasado."],
 ["resultado_FALSE_2.png", "Assim não dá! Ir de moto e de carro ao mesmo tempo não é possível."]
 ]

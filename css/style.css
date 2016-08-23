@@ -1,4 +1,14 @@
 #divHeader {
     background-image: url("../images/background.png");
     background-repeat: repeat;
+    background-size: cover;    
+}
+
+body {
+	background-color: #E6E6FA;	
+}
+
+.box {
+	background-color: #FFFFFF;
+	border-radius: 7px;
 }

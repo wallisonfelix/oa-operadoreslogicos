@@ -50,7 +50,7 @@
 	</script>
 </head>
 
-<body style="background-color: #fffffa;" onload="load()">
+<body onload="load()">
 	<div class="container">
 	
 	<div class="col-sm-12">&nbsp</div>
@@ -71,19 +71,19 @@
 	  	<div class="col-sm-12">&nbsp</div>
 
 		<div id="elementos" class="col-sm-12">
-			<div id="divDescricao" class="col-sm-12 well well-lg lead">
+			<div id="divDescricao" class="col-sm-12 well well-lg lead box">
 				<p>No segundo dia de prova, João teve mais sorte. Sabendo do susto que ele passou para chegar ao seu local de prova no primeiro dia, o seu irmão, José, ofereceu-lhe um carro para que ele pudesse chegar ao local de prova mais tranquilo.</p>
 				<p>Considerando que João passou a ter duas opções de veículos para ir fazer a prova, selecione uma combinação de opções que considere como escolhas inadequadas para João e, em seguida, selecione uma combinação que considere coerente e que acredite ser a que João escolheu.</p>
 			</div>
 
 		    <div id="divP" class="col-sm-3">		    	
 		    	<span class="col-sm-12">&nbsp</span>
-				<div id="divElementoP" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divElementoP" class="col-sm-12 well well-lg box" ondrop="elementDrop(event, 'P')" ondragover="allowDrop(event)">
 				</div>
-				<div id="divOpcao1ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divOpcao1ElementoP" class="col-sm-6 well well-lg box" style="padding: 2px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
 					<img id="imgOpcao1ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>
-				<div id="divOpcao2ElementoP" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
+				<div id="divOpcao2ElementoP" class="col-sm-6 well well-lg box" style="padding: 2px;" ondrop="elementUndrop(event, 'P')" ondragover="allowDrop(event)">
 					<img id="imgOpcao2ElementoP" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>				
 			</div>
@@ -97,22 +97,22 @@
 
 			<div id="divQ" class="col-sm-3">		    	
 		    	<span class="col-sm-12">&nbsp</span>
-				<div id="divElementoQ" class="col-sm-12 well well-lg" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divElementoQ" class="col-sm-12 well well-lg box" ondrop="elementDrop(event, 'Q')" ondragover="allowDrop(event)">
 				</div>
-				<div id="divOpcao1ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divOpcao1ElementoQ" class="col-sm-6 well well-lg box" style="padding: 2px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
 					<img id="imgOpcao1ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>
-				<div id="divOpcao2ElementoQ" class="col-sm-6 well well-lg" style="padding: 10px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
+				<div id="divOpcao2ElementoQ" class="col-sm-6 well well-lg box" style="padding: 2px;" ondrop="elementUndrop(event, 'Q')" ondragover="allowDrop(event)">
 					<img id="imgOpcao2ElementoQ" src="" class="img-thumbnail img-responsive center-block" draggable="true" ondragstart="drag(event)">
 				</div>				
 			</div>
 
 			<div class="col-sm-5">
 		    	<span class="col-sm-12">&nbsp</span>
-		    	<div id="divDescricao" class="col-sm-offset-2 col-sm-10 well well-lg">
+		    	<div id="divDescricao" class="col-sm-offset-2 col-sm-10 well well-lg box">
 					<span id="spanTextoResultado" class="lead">...</span>
 				</div>
-				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg">			
+				<div id="divElementoResultado" class="col-sm-offset-2 col-sm-10 well well-lg box">			
 					<img id="imgElementoResultado" src="" class="img-thumbnail">
 				</div>				
 			</div>
